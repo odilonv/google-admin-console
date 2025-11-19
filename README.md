@@ -7,7 +7,7 @@ A modern, full-stack web application replicating the **Google Play Console** aes
 ![Light mode](docs/screenshots/light-mode.png)
 *Screenshot: Light Mode*
 
-![Dark mode](docs/screenshots/dark-mode.png) |
+![Dark mode](docs/screenshots/dark-mode.png)
 *Screenshot: Dark Mode*
 
 ## Key Features
