@@ -4,39 +4,38 @@ A modern, full-stack web application replicating the **Google Play Console** aes
 
 > **Academic Context:** Developed as part of the **INFRES 3A Coursework (TP1-TP3)** at **IMT Mines Alès**.
 
-## 📸 Screenshots
+![Light mode](docs/screenshots/light-mode.png)
+*Screenshot: Light Mode*
 
-| Light Mode | Dark Mode |
-|:-----------:|:------------:|
-| ![Light mode](docs/screenshots/screenshot-light.png) | ![Dark mode](docs/screenshots/screenshot-dark.png) |
+![Dark mode](docs/screenshots/dark-mode.png) |
+*Screenshot: Dark Mode*
 
+## Key Features
 
-## ✨ Key Features
-
-### 🎨 UI/UX & Design (TP2 & TP3)
+### UI/UX & Design (TP2 & TP3)
 
   * **Google Material Design:** Authentic blue gradient overlays, typography, and spacing mimicking the Google Play Console.
-  * [cite\_start]**Dark/Light Theme:** Global theme management using React **Context API** with persistent preferences[cite: 49, 50].
+  * **Dark/Light Theme:** Global theme management using React **Context API** with persistent preferences.
   * **Responsive Layout:** Optimized for Desktop, Tablet, and Mobile.
 
-### ⚡ Advanced Data Table (TP1 & TP3)
+### Advanced Data Table (TP1 & TP3)
 
   * **Server-Side Pagination:** Handles large datasets efficiently.
-  * [cite\_start]**Multi-Criteria Filtering:** Filter by ID, Name, Email, Role, or Date simultaneously[cite: 33].
+  * **Multi-Criteria Filtering:** Filter by ID, Name, Email, Role, or Date simultaneously.
   * **Smart Sorting:** Toggle ascending/descending order on any column.
-  * [cite\_start]**State Persistence:** Uses `localStorage` to remember your page, sort order, and active filters even after a refresh[cite: 48].
+  * **State Persistence:** Uses `localStorage` to remember your page, sort order, and active filters even after a refresh.
 
-### 🛠️ Backend Architecture (TP3)
+### Backend Architecture (TP3)
 
   * **Dual-Mode Storage:**
-    1.  [cite\_start]**MongoDB Mode:** Persistent data storage using Mongoose[cite: 56].
+    1.  **MongoDB Mode:** Persistent data storage using Mongoose.
     2.  **In-Memory Mode:** Volatile array-based storage for instant testing without DB installation.
-  * [cite\_start]**REST API:** Clean endpoints for CRUD operations[cite: 60].
+  * **REST API:** Clean endpoints for CRUD operations.
   * **Clean Architecture:** Separation of Concerns (SoC) with Controllers, Services, and Repositories.
 
 -----
 
-## 🚀 Quick Start
+## Quick Start
 
 **Prerequisites:** Node.js 16+
 
@@ -54,7 +53,7 @@ cd ../frontend && npm install
 
 You can run the application in **Memory Mode** (recommended for grading/testing) or **Database Mode**.
 
-#### 🅰️ Option A: In-Memory Mode (No MongoDB required)
+#### Option A: In-Memory Mode (No MongoDB required)
 
 *Ideal for quick evaluation. Data is lost on server restart.*
 
@@ -68,7 +67,7 @@ cd frontend
 npm run dev
 ```
 
-#### 🅱️ Option B: Production Mode (MongoDB)
+#### Option B: Production Mode (MongoDB)
 
 *Requires a local MongoDB instance running on `localhost:27017`.*
 
@@ -92,15 +91,15 @@ Access the app at: **[http://localhost:3000](https://www.google.com/search?q=htt
 
 -----
 
-## 🏗️ Technical Architecture
+## Technical Architecture
 
-[cite\_start]This project follows the requirements set in the coursework documentation[cite: 45, 54].
+This project follows the requirements set in the coursework documentation[cite: 45, 54].
 
 ### Frontend (React + TypeScript)
 
-  * [cite\_start]**Components:** Functional components separated into atomic parts (`Header`, `Table`, `Footer`)[cite: 12].
-  * [cite\_start]**Hooks:** Custom hooks (e.g., `useTableState`) encapsulate logic for sorting and filtering, keeping the UI clean[cite: 47].
-  * [cite\_start]**Context:** `ThemeContext` avoids prop-drilling for style preferences[cite: 52].
+  * **Components:** Functional components separated into atomic parts (`Header`, `Table`, `Footer`).
+  * **Hooks:** Custom hooks (e.g., `useTableState`) encapsulate logic for sorting and filtering, keeping the UI clean.
+  * **Context:** `ThemeContext` avoids prop-drilling for style preferences.
 
 ### Backend (Node + Express)
 
@@ -116,7 +115,7 @@ backend/
 └── server.memory.js   # Entry point (In-Memory)
 ```
 
-## 🔌 API Reference
+## API Reference
 
 Base URL: `http://localhost:5000/api`
 
@@ -129,17 +128,16 @@ Base URL: `http://localhost:5000/api`
 
 -----
 
-## 📚 Coursework Compliance (TP Evaluation)
+## Coursework Compliance (TP Evaluation)
 
 This repository satisfies the requirements for **TP 3 (Les États)**:
 
-1.  **State Management:** Implemented via `useState` and custom hooks for the table[cite: 47].
-2.  **Persistence:** Filter and sort configurations are saved in LocalStorage[cite: 48].
-3.  **Theming:** Global Light/Dark toggle implemented via Context API[cite: 50].
-4.  **Backend:** Node.js/Express server providing a JSON REST API[cite: 55, 60].
-5.  **Database:** MongoDB integration + In-Memory fallback[cite: 56].
-
-## 👤 Author
+1.  **State Management:** Implemented via `useState` and custom hooks for the table.
+2.  **Persistence:** Filter and sort configurations are saved in LocalStorage.
+3.  **Theming:** Global Light/Dark toggle implemented via Context API.
+4.  **Backend:** Node.js/Express server providing a JSON REST API.
+5.  **Database:** MongoDB integration + In-Memory fallback.
+## Author
 
 **Odilon VIDAL**
 *Student at IMT Mines Alès*
