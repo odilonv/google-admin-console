@@ -1,0 +1,152 @@
+/**
+ * Styles globaux avec variables CSS pour les thèmes
+ * Respect du principe DRY (Don't Repeat Yourself)
+ */
+
+:root {
+  /* Google Material Design System */
+  --max-width: 1400px;
+  --border-radius: 8px;
+  --border-radius-lg: 24px;
+  --transition-speed: 0.2s;
+
+  /* Google Brand Colors */
+  --google-blue: #4285F4;
+  --google-red: #DB4437;
+  --google-yellow: #F4B400;
+  --google-green: #0F9D58;
+
+  /* Material Design Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+
+  /* Material Elevation Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+  --shadow-md: 0 1px 3px 0 rgba(60, 64, 67, 0.3), 0 4px 8px 3px rgba(60, 64, 67, 0.15);
+  --shadow-lg: 0 2px 6px 2px rgba(60, 64, 67, 0.15), 0 8px 24px 4px rgba(60, 64, 67, 0.15);
+}
+
+/* Google Light Theme (Default) */
+body.light {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --bg-tertiary: #e8eaed;
+
+  --text-primary: #202124;
+  --text-secondary: #5f6368;
+  --text-inverse: #ffffff;
+
+  --border-color: #dadce0;
+  --border-hover: #bdc1c6;
+
+  --primary-color: var(--google-blue);
+  --primary-hover: #1967D2;
+
+  --success-color: var(--google-green);
+  --warning-color: var(--google-yellow);
+  --danger-color: var(--google-red);
+
+  --table-header-bg: var(--google-blue);
+  --table-row-hover: #f1f3f4;
+  --table-border: #dadce0;
+
+  --calendar-icon-filter: none;
+}
+
+/* Google Dark Theme */
+body.dark {
+  --bg-primary: #202124;
+  --bg-secondary: #292a2d;
+  --bg-tertiary: #35363a;
+
+  --text-primary: #e8eaed;
+  --text-secondary: #9aa0a6;
+  --text-inverse: #202124;
+
+  --border-color: #3c4043;
+  --border-hover: #5f6368;
+
+  --primary-color: #8ab4f8;
+  --primary-hover: #aecbfa;
+
+  --success-color: #81c995;
+  --warning-color: #fdd663;
+  --danger-color: #f28b82;
+
+  --table-header-bg: #1a73e8;
+  --table-row-hover: #292a2d;
+  --table-border: #3c4043;
+
+  --calendar-icon-filter: invert(1);
+}
+
+/* Reset et styles de base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Google Sans', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  line-height: 1.5;
+  font-size: 14px;
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* Utilitaires */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive breakpoints */
+@media (max-width: 768px) {
+  :root {
+    --spacing-lg: 1rem;
+    --spacing-xl: 1.5rem;
+  }
+}
