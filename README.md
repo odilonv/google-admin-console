@@ -7,16 +7,16 @@ A modern, full-stack web application replicating the **Google Play Console** aes
 ## Screenshots
 
 ![Light mode](docs/screenshots/login-light-mode.png)
-*Screenshot: Login Page Light Mode*
+*Login Page Light Mode*
 
 ![Light mode](docs/screenshots/users-light-mode.png)
-*Screenshot: User List Page Light Mode*
+*User List Page Light Mode*
 
 ![Dark mode](docs/screenshots/login-dark-mode.png)
-*Screenshot: Login Page Dark Mode*
+*Login Page Dark Mode*
 
 ![Dark mode](docs/screenshots/users-dark-mode.png)
-*Screenshot: User List Page Dark Mode*
+*User List Page Dark Mode*
 
 ## Key Features
 
