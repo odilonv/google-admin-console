@@ -1,16 +1,11 @@
 import React, { useState, FormEvent } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { useNavigate } from '../context/RouterContext';
+import { useTheme } from '../context/ThemeContext';
+import Brightness4Icon from '@mui/icons-material/Brightness4';
+import Brightness7Icon from '@mui/icons-material/Brightness7';
 import '../styles/Login.css';
 
-/**
- * PageConnexion Component
- * Login page with form validation and authentication
- * 
- * Following SOLID principles:
- * - SRP: Handles only login UI and form submission logic
- * - DIP: Depends on useAuth and useNavigate abstractions
- */
 const PageConnexion: React.FC = () => {
   const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
@@ -18,33 +13,25 @@ const PageConnexion: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const { login } = useAuth();
+  const { theme, toggleTheme } = useTheme();
   const navigate = useNavigate();
 
-  /**
-   * Handle form submission
-   * Validates credentials and redirects on success
-   * Following DRY principle - single source of truth for login logic
-   */
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError('');
     setIsLoading(true);
 
-    // Basic validation
     if (!username.trim() || !password.trim()) {
       setError('Please fill in all fields');
       setIsLoading(false);
       return;
     }
 
-    // Attempt login
     const isSuccess = login(username, password);
 
     if (isSuccess) {
-      // Redirect to users page on successful login
       navigate('/users');
     } else {
-      // Show error message
       setError('Invalid username or password');
       setIsLoading(false);
     }
@@ -52,6 +39,17 @@ const PageConnexion: React.FC = () => {
 
   return (
     <div className="login-container">
+      <button 
+        onClick={toggleTheme} 
+        className="theme-toggle-login"
+        aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} theme`}
+      >
+        {theme === 'light' ? (
+          <Brightness4Icon fontSize="small" />
+        ) : (
+          <Brightness7Icon fontSize="small" />
+        )}
+      </button>
       <div className="login-card">
         <div className="login-header">
           <img src="/assets/google-logo.svg" alt="Google" className="login-logo" />

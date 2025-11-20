@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Table from '../components/Table';
 import { useAuth } from '../context/AuthContext';
-import { useNavigate } from '../context/RouterContext';
 import { useTheme } from '../context/ThemeContext';
 import { userApiService } from '../api/userApi';
 import { User } from '../types';
@@ -12,14 +12,6 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import '../styles/App.css';
 import '../styles/Table.css';
 
-/**
- * PageUsers Component
- * Protected page that displays the user management table
- * 
- * Following SOLID principles:
- * - SRP: Handles only user list display logic
- * - DIP: Depends on abstractions (hooks and services)
- */
 const PageUsers: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
   const { username, userRole, logout } = useAuth();
@@ -28,10 +20,6 @@ const PageUsers: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
-  /**
-   * Fetch users data from API
-   * Following separation of concerns - API logic is in a separate service
-   */
   useEffect(() => {
     const fetchUsers = async () => {
       try {
@@ -50,10 +38,6 @@ const PageUsers: React.FC = () => {
     fetchUsers();
   }, []);
 
-  /**
-   * Handle logout action
-   * Clears authentication state and redirects to login
-   */
   const handleLogout = () => {
     logout();
     navigate('/login');
@@ -61,7 +45,6 @@ const PageUsers: React.FC = () => {
 
   return (
     <div className="app">
-      {/* Header with controls */}
       <header className="app-header">
         <div className="header-content">
           <div className="header-left">
@@ -96,7 +79,6 @@ const PageUsers: React.FC = () => {
         </div>
       </header>
 
-      {/* Main content */}
       <main className="app-main">
         {error ? (
           <div className="error-message">
@@ -111,7 +93,6 @@ const PageUsers: React.FC = () => {
         )}
       </main>
 
-      {/* Footer */}
       <footer className="app-footer">
         <p>Google Admin Console - User Management System</p>
         <p>Built with <FavoriteIcon fontSize="small" className="footer-icon" /> using React + TypeScript + Node.js + MongoDB</p>

@@ -1,33 +1,18 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { useNavigate } from '../context/RouterContext';
 import BlockIcon from '@mui/icons-material/Block';
 import HomeIcon from '@mui/icons-material/Home';
 import '../styles/Forbidden.css';
 
-/**
- * PageForbidden Component
- * Displays when user tries to access a route without proper authorization
- * 
- * Following SOLID principles:
- * - SRP: Handles only forbidden access UI
- * - DIP: Depends on abstractions (hooks)
- */
 const PageForbidden: React.FC = () => {
   const { username, userRole, logout } = useAuth();
   const navigate = useNavigate();
 
-  /**
-   * Navigate back to users page
-   * User might have limited access but can still see their allowed pages
-   */
   const handleGoBack = () => {
     navigate('/users');
   };
 
-  /**
-   * Handle logout and redirect to login
-   */
   const handleLogout = () => {
     logout();
     navigate('/login');

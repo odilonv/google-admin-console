@@ -2,13 +2,21 @@
 
 A modern, full-stack web application replicating the **Google Play Console** aesthetic. This project demonstrates a complete migration from Vanilla JS to a robust **React/TypeScript** architecture, featuring advanced state management, dual-mode backend storage, and strict adherence to **SOLID principles**.
 
-> **Academic Context:** Developed as part of the **INFRES 3A Coursework (TP1-TP3)** at **IMT Mines Alès**.
+> **Academic Context:** Developed as part of the **INFRES 3A Coursework (TP1-TP5)** at **IMT Mines Alès**.
 
-![Light mode](docs/screenshots/light-mode.png)
-*Screenshot: Light Mode*
+## Screenshots
 
-![Dark mode](docs/screenshots/dark-mode.png)
-*Screenshot: Dark Mode*
+![Light mode](docs/screenshots/login-light-mode.png)
+*Screenshot: Login Page Light Mode*
+
+![Light mode](docs/screenshots/users-light-mode.png)
+*Screenshot: User List Page Light Mode*
+
+![Dark mode](docs/screenshots/login-dark-mode.png)
+*Screenshot: Login Page Dark Mode*
+
+![Dark mode](docs/screenshots/users-dark-mode.png)
+*Screenshot: User List Page Dark Mode*
 
 ## Key Features
 
@@ -25,7 +33,7 @@ A modern, full-stack web application replicating the **Google Play Console** aes
   * **Smart Sorting:** Toggle ascending/descending order on any column.
   * **State Persistence:** Uses `localStorage` to remember your page, sort order, and active filters even after a refresh.
 
-### Backend Architecture (TP3)
+### Backend Architecture (TP3 & TP5)
 
   * **Dual-Mode Storage:**
     1.  **MongoDB Mode:** Persistent data storage using Mongoose.
@@ -99,7 +107,8 @@ This project follows the requirements set in the coursework documentation[cite: 
 
   * **Components:** Functional components separated into atomic parts (`Header`, `Table`, `Footer`).
   * **Hooks:** Custom hooks (e.g., `useTableState`) encapsulate logic for sorting and filtering, keeping the UI clean.
-  * **Context:** `ThemeContext` avoids prop-drilling for style preferences.
+  * **Context:** `ThemeContext` and `AuthContext` for global state management avoiding prop-drilling.
+  * **Routing:** React Router for navigation and protected routes based on authentication and authorization.
 
 ### Backend (Node + Express)
 
@@ -130,13 +139,16 @@ Base URL: `http://localhost:5000/api`
 
 ## Coursework Compliance (TP Evaluation)
 
-This repository satisfies the requirements for **TP 3 (Les États)**:
+This repository satisfies the requirements for **TP 3 (Les États)** and **TP 5 (Le routage)**:
 
 1.  **State Management:** Implemented via `useState` and custom hooks for the table.
 2.  **Persistence:** Filter and sort configurations are saved in LocalStorage.
 3.  **Theming:** Global Light/Dark toggle implemented via Context API.
-4.  **Backend:** Node.js/Express server providing a JSON REST API.
-5.  **Database:** MongoDB integration + In-Memory fallback.
+4.  **Authentication:** Context API for centralized authentication state management.
+5.  **Routing:** React Router (`react-router-dom`) for navigation with protected routes.
+6.  **Authorization:** Role-based access control (admin, user, guest) with redirections.
+7.  **Backend:** Node.js/Express server providing a JSON REST API.
+8.  **Database:** MongoDB integration + In-Memory fallback.
 ## Author
 
 **Odilon VIDAL**
