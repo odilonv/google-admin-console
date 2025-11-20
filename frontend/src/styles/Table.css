@@ -202,30 +202,27 @@
 /* Google-style Role Badges */
 .role-badge {
   display: inline-block;
-  padding: 4px 12px;
-  border-radius: 12px;
+  padding: 6px 14px;
+  border-radius: 16px;
   font-size: 11px;
-  font-weight: 500;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
 .role-admin {
-  background: #fce8e6;
-  color: var(--google-red);
-  border: 1px solid #f5c6cb;
+  background: #fce8e6 !important;
+  color: #d93025 !important;
 }
 
 .role-user {
-  background: #e8f0fe;
-  color: var(--google-blue);
-  border: 1px solid #d2e3fc;
+  background: #e8f0fe !important;
+  color: #1967d2 !important;
 }
 
 .role-guest {
-  background: #e6f4ea;
-  color: var(--google-green);
-  border: 1px solid #ceead6;
+  background: #e6f4ea !important;
+  color: #137333 !important;
 }
 
 /* Message "Aucune donnée" */
